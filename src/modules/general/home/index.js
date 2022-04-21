@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 
+import Layout from 'src/components/layout';
 import homeService from './service';
+
 
 const Home = () => {
     useEffect(() => {
@@ -10,10 +12,12 @@ const Home = () => {
         }).catch(err => {
             console.log(err);
         });
-    });
+    }, []);
 
     return (
-        <div>homepage</div>
+        <Layout>
+            <div>homepage</div>
+        </Layout>
     );
 }
 
