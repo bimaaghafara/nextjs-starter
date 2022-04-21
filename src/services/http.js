@@ -30,7 +30,7 @@ http.interceptors.response.use(
     // ) {
     //   localStorage.setItem('token', response.data.data.token);
     // }
-    // return response.data;
+    return response.data;
   },
   // Do something with response error
   function (error) {
