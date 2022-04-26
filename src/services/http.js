@@ -1,4 +1,5 @@
 import axios from "axios";
+// import { encrypt, decrypt } from "src/helpers/crypto";
 // import Router from 'next/router'
 
 const http = axios.create({
@@ -13,7 +14,7 @@ http.interceptors.request.use(config => {
   // const token = localStorage.getItem('token');
   // if (token) {
   //   // add token to request headersif exist
-  //   config.headers['Authorization'] = `Bearer ${token}`;
+  //   config.headers['Authorization'] = `Bearer ${decrypt(token)}`;
   // }
   return config;
 });
@@ -28,7 +29,7 @@ http.interceptors.response.use(
     //   response.data.data &&
     //   response.data.data.token
     // ) {
-    //   localStorage.setItem('token', response.data.data.token);
+    //   localStorage.setItem('token', encrypt(response.data.data.token));
     // }
     return response.data;
   },
