@@ -27,10 +27,13 @@ export default function RouteGuard({ children }) {
 
     function authCheck(url) {
         // redirect to login page if accessing a private page and not logged in 
-        const publicPaths = ['/login'];
+        const privatePaths = ['/', '/home'];
         const path = url.split('?')[0];
+
+        // TODO: add logic isLogin
         const isLogin = false;
-        if (!isLogin && !publicPaths.includes(path)) {
+
+        if (!isLogin && privatePaths.includes(path)) {
             setAuthorized(false);
             router.push({
                 pathname: '/login',
