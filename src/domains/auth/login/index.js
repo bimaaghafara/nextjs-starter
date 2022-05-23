@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 
-import loginService from './service';
+import { getUsers } from './services';
 
 const Login = () => {
     useEffect(() => {
-        loginService.getUsers()
+        getUsers()
         .then(res => {
             console.log(res);
         }).catch(err => {

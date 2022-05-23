@@ -1,3 +1,3 @@
-import Login from "src/domains/auth/login";
+import Login from "src/domains/auth/Login";
 
 export default Login;

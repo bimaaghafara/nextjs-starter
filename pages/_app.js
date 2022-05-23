@@ -1,5 +1,5 @@
 import 'styles/globals.css';
-import RouteGuard from 'src/components/routhGuard';
+import RouteGuard from 'src/components/RouthGuard';
 
 function MyApp({ Component, pageProps }) {
   return (

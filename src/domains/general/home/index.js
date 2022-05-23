@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 
-import Layout from 'src/components/layout';
-import homeService from './service';
+import Layout from 'src/components/Layout';
+import { getUsers } from './services';
 
 
 const Home = () => {
     useEffect(() => {
-        homeService.getUsers()
+        getUsers()
         .then(res => {
             console.log(res);
         }).catch(err => {
