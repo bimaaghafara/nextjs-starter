@@ -34,10 +34,10 @@ export default function RouteGuard({ children }) {
         const isLogin = false;
 
         if (!isLogin && privatePaths.includes(path)) {
+            setAuthorized(false);
             const addReturnUrl = router.asPath && router.asPath !== '/';
             const returnUrl = router.asPath;
             const query = { ...(addReturnUrl && { returnUrl })}
-            setAuthorized(false);
             router.push({ pathname: '/login', query });
         } else {
             setAuthorized(true);
